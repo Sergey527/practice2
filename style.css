@@ -1,12 +1,23 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
     margin: 0;
     font-family: 'Lato', sans-serif;
     font-size: 20px;
+    box-sizing: border-box;
 }
 
 .inner {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .top {
@@ -15,6 +26,8 @@ body {
     align-items: center;
     background: #fff;
     font-weight: 500;
+    position: relative;
+    z-index: 10;
 }
 
 .top .inner {
@@ -92,14 +105,30 @@ body {
 }
 
 .container {
+    position: relative;
     overflow: hidden;
     height: 896px;
+    background-image: url(img/BG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .content {
     position: relative;
     top: 175px;
     text-align: justify;
+    z-index: 1;
 }
 
 .title {
@@ -261,8 +290,8 @@ body {
 }
 
 .video {
-    height: 516px;
-    width: 895px;
+    max-width: 100%;
+    display: flex;
 }
 
 .op-title {
@@ -275,13 +304,24 @@ body {
 }
 
 .op-content {
+    max-width: 100%;
     display: flex;
-    margin: 120px 0 168px 0;
+    margin: 50px auto;
+}
+
+.op-content>img {
+    max-width: 100%;
+    display: flex;
 }
 
 .op-text {
     margin-left: 86px;
     margin-top: -20px;
+}
+
+.op-text .title {
+    font-size: 50px;
+    line-height: 78px;
 }
 
 .footer {
@@ -315,4 +355,224 @@ body {
 
 .footer-link:last-child {
     margin: 0;
+}
+
+.lines {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 19px;
+    right: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.line {
+    background-color: #000;
+    width: 20px;
+    height: 3px;
+    position: absolute;
+    top: 45%;
+}
+
+.line:before {
+    content: "";
+    display: block;
+    background-color: #000000;
+    width: 20px;
+    height: 3px;
+    position: absolute;
+    top: -7px;
+}
+
+.line:after {
+    content: "";
+    display: block;
+    background-color: #000000;
+    width: 20px;
+    height: 3px;
+    position: absolute;
+    top: 7px;
+}
+
+.links-mobile {
+    padding: 20px;
+    position: absolute;
+    bottom: -140px;
+    left: 0;
+    width: 100%;
+    background-color: #484848;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    z-index: 9;
+    display: none;
+}
+
+.link-mobile {
+    color: white;
+}
+
+.rectangle {
+    display: flex;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+@media (max-width: 1090px) {
+
+    .container {
+        height: 245px;
+    }
+
+    .hiw-text {
+        max-width: 100%;
+        text-align: justify;
+    }
+
+    .content {
+        top: auto;
+        width: 100%;
+    }
+
+    .link {
+        display: none;
+    }
+
+    .btns {
+        position: relative;
+    }
+
+    .sign-in,
+    .btn {
+        font-size: 15px;
+        padding: 5px 10px;
+        position: absolute;
+    }
+
+    .sign-in {
+        left: 0;
+        bottom: -17px;
+    }
+
+    .btn {
+        left: 63px;
+        bottom: -17px;
+    }
+
+    .lines {
+        display: block;
+    }
+
+    .op-content {
+        display: block;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .first-text {
+        max-width: 100%;
+        font-size: 15px;
+        color: black;
+        margin: 0;
+    }
+
+    .op-title {
+        font-size: 20px;
+    }
+
+    .op-text {
+        font-size: 15px;
+    }
+
+    .how-it-works {
+        margin-top: 50px;
+    }
+
+    .how-it-works .title {
+        font-size: 30px;
+    }
+
+    .hiw-top {
+        display: block;
+    }
+
+    .hiw-columns {
+        display: block;
+        max-width: 100%;
+        margin-top: 150px;
+        text-align: center;
+    }
+
+    .rectangle {
+        margin-bottom: 50px;
+    }
+
+    .col-one,
+    .col-two,
+    .col-three {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .cont-btn {
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+
+    .column-text {
+        max-width: 100%;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .lets-start {
+        padding: 7px 0 14px 0;
+    }
+
+    .ls-content {
+        display: block;
+        padding: 0 10px;
+    }
+
+    .ls-title {
+        font-size: 30px;
+        line-height: 1.5;
+    }
+
+    .ls-text {
+        margin: 20px 0;
+    }
+
+    .video {
+        margin-top: 20px;
+    }
+
+    .op-text {
+        margin-left: 0;
+        margin-top: 0px;
+    }
+
+    .op-text .title {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .op-text p {
+        margin-bottom: 15px;
+    }
+
+    .footer-links {
+        padding: 30px 20px 30px 20px;
+    }
+
+    .footer-logo, .footer-link {
+        margin-bottom: 40px;
+    }
 }
